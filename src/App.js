@@ -2,14 +2,18 @@ import {BrowserRouter,Switch,Route,Link} from "react-router-dom"
 import Home from "./views/Home";
 import Footer from "./component/Footer";
 import Favorits from "./views/Favorites";
+import{createContext,useState} from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+ export const favoritsContext = createContext([]);
 
 function App() {
+  const [favoriteCity, setfavoriteCity] = useState([])
   
   return (
     <BrowserRouter>
+     <favoritsContext.Provider value={{favoriteCity, setfavoriteCity}}>
        < nav className="navbar navbar-expand-md navbar-light bg-light">
                 <div className="container-fluid">             
                     <p> <Link to="/">Home</Link> </p>
@@ -21,6 +25,7 @@ function App() {
       <Route exact path="/"  component={Home} />
       <Route  exact path="/Favortis"  component={Favorits} />
       </Switch>
+      </favoritsContext.Provider>
         <Footer />
     </BrowserRouter>
     
