@@ -4,6 +4,9 @@ import { favoritsContext } from '../App'
 
 
 
+
+
+
 const CityCard = () => {
     const {favoriteCity,setfavoriteCity} = useContext(favoritsContext)
     const removeFavorite = (city) => { 
@@ -15,17 +18,21 @@ const CityCard = () => {
   
 
     return (
-        <>
-                {favoriteCity.map( (cityTemp, index) => 
-                   (<div key={index}>
+        <div className>
+                {favoriteCity.map( (cityTemp) => 
+                   (<div className="cityCard">
                     <p>City : {cityTemp.name}</p>
-                    <p>Temperature : {cityTemp.main ? cityTemp.main.temp : null}</p>
-                    <button onClick={() => removeFavorite(cityTemp.name)} className="btn-remove-fav" >Remove to favorite</button>
+                    <p>Temperature : {Math.floor(cityTemp.main.temp)-273}</p>
+                    <p>Temp min : {Math.floor(cityTemp.main.temp_min)-273}</p>
+                    <p>Temp max : {Math.floor( cityTemp.main.temp_max)-273}</p>
+                   
+                    
+                    <button className="favorites-btn" onClick={() => removeFavorite(cityTemp.name)}>Remove to favorite</button>
                     
                 </div>)
     
                 )}
-        </>
+        </div>
     )
 }
 

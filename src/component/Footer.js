@@ -1,16 +1,27 @@
 
 
-function Footer(){
-    return(
-        <footer className="bg-light text-center text-lg-start">
+// function Footer(){
+//     return(
+//         <footer className="Footer">
         
-        <div className="text-center p-3">
-          © 2021 Copyright:
-          <p className="text-dark" >wather update</p>
-        </div>
+//         <div className="text-center p-3">
+//           © 2021 Copyright:
+//           <p className="text-dark" >wather update</p>
+//         </div>
        
-      </footer>)
+//       </footer>)
       
-}
+// }
 
-export default Footer
+// export default Footer
+
+const Footer = () => {
+  return (
+    <div className="footer p-20">
+      <p>emran</p>
+      <p>Août 2021</p>
+    </div>
+  );
+};
+
+export default Footer;

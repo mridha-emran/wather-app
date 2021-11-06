@@ -1,38 +1,206 @@
-.App {
-  text-align: center;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Source Sans Pro";
+
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Source Sans Pro", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+}
+@font-face {
+  font-family: "Ubuntu", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&family=Ubuntu&display=swap");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 1;
+}
+
+.navWrapper {
+  list-style-type: none;
+  height: 45px;
+  background-color: rgb(237, 235, 235);
+  display: flex;
+  justify-content: space-around;
+
+}
+.navLink {
+  text-decoration: none;
+  color: salmon;
+  font-size: 20px;
+}
+
+.navLink:hover {
+  font-weight: bolder;
+}
+
+.footer {
+  background-color: rgb(237, 235, 235);
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  color:black;
+  margin: auto;
+}
+
+
+.cityCard {
+
+  color: wheat;
+  display:flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 50px 0 50px;
+  font-size: 40px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0.52),
+      rgba(0, 195, 255, 0.73)
+    ),
+    url("img/weather.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.2s ease;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App.clear {
+  background-image: 
+    url("img/clear.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.2s ease;
+  background-position: center;
+  height: 100vh;
+}
+
+.App.mist {
+  background-image: 
+    url("img/Mist.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.2s ease;
+  background-position: center;
+  height: 100vh;
+}
+
+.App.cold {
+  background-image: 
+   
+    url("img/snowing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.2s ease;
+    height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App.rain {
+    background-image: 
+      url("img/kids-rain.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.2s ease;
+    background-position: center;
+    height: 100vh;
   }
+  .App.cloud {
+    background-image: 
+      url("img/cloud\ \(2\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.2s ease;
+    background-position: center;
+    height: 100vh;
+  }
+  .App.thander {
+    background-image: 
+      url("img/images\ haze.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.2s ease;
+    background-position: center;
+    height: 100vh;
+  }
+    
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.search-container {
+  width: 100%;
+  margin: 0 0 75px;
+  display: flex;
+}
+
+.search-bar {
+  color: black;
+  font-size: 15px;
+  display: block;
+  width: 80%;
+  margin-top: 25px;
+  margin-left: 35px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  appearance: none;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 5px rgba(58, 53, 53, 0.73);
+  background: rgba(255, 255, 255, 0.52);
+  transition: 0.4s ease;
+  align-self:center;
+}
+
+.search-container .search-bar:focus {
+  background-color: white;
+}
+
+.button{
+   width: 10%;
+   margin-top: 25px;
+   margin-left: 10px;
+   border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 5px rgba(58, 53, 53, 0.73);
+  cursor: pointer;
+  font-size: 16px;
+}
+.not-found{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:wheat;
+}
+.favorites{
+background-color:skyblue
+}
+
+.favorites-btn {
+  margin-top: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 5px rgba(58, 53, 53, 0.73);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }

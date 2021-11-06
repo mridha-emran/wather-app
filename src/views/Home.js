@@ -1,12 +1,15 @@
 
-import  { useState,useContext,useEffect } from 'react';
+import  { useState,useContext, } from 'react';
 import getWather from '../component/Api';
 import { favoritsContext } from '../App';
+
+
 
 function Home(){
 
     const [cityName, setCityName] = useState("");
     const [cityTemp,setTemp] = useState({});
+    const [weather, setWeather] = useState("");
     const {favoriteCity, setfavoriteCity} = useContext(favoritsContext)
     
     
@@ -14,6 +17,7 @@ function Home(){
         e.preventDefault();
         const data=await getWather(cityName)
         setTemp(data)
+        setWeather(data)
         console.log(data)
       };
 
@@ -26,28 +30,50 @@ function Home(){
         
         }
         
-        
-        
+              
     }
+
+   
+   
     return(
-        <>
-       < div>
+      <div className={
+
+        typeof weather.weather !== "undefined"
+        ? weather.weather[0].main !== "Clear" ? weather.weather[0].main !== "Mist" ?
+        weather.weather[0].main !== "Snow" ? weather.weather[0].main !== "Rain" ? weather.weather[0].main !== "Clouds" ?
+         "App thander" :  "App cloud" : "App rain" : "App cold" : "App mist": " App clear": "App"
+      
+      }>
+       <div>
         <h1>weather</h1>
-        <form class="form-inline my-2 my-sm-0">
-      <input className="form-control mr-sm-2" type="text" value={cityName} onChange={(e) => {
+
+        <form className="search-container">
+      <input className="search-bar" type="text" value={cityName} onChange={(e) => {
         setCityName(e.target.value)}}  placeholder="Search" aria-label="Search"/>
         
-      <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleSubmit} type="submit">Search</button>
+      <button className="button" onClick={handleSubmit} type="submit">Search</button>
     </form>
-    </div> 
-    <div>
+    </div>
+    {typeof cityTemp.main != "undefined" ?(
+
+      <div className="cityCard">
                 <p>City : {cityTemp.name}</p>
-                <p>Temperature : {cityTemp.main ? cityTemp.main.temp : null}</p>
-                <button onClick={setFavorite} className="btn btn-outline-success my-2 my-sm-0">addfavorite</button>
+                <p>Weather : { weather.weather ? weather.weather[0].main : null}</p>
+                <p>Temperature : {Math.floor(cityTemp.main ? cityTemp.main.temp: null)-273}°c</p>
+                <p>Temp max : {Math.floor(cityTemp.main ? cityTemp.main.temp_max:null)-273}°c</p>
+                <p>Temp min : {Math.floor(cityTemp.main ? cityTemp.main.temp_min:null)-273}°c</p>
+                <button className = "favorites-btn" onClick={setFavorite}>addfavorite</button>
             </div>
 
+)
+: (
+  <div className="not-found">
+    <p>Please type your City Name...</p>
+  </div>
+ )
+} 
 
-        </>
+        </div>
     )
 }
 export default Home
