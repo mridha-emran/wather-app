@@ -84,7 +84,11 @@ html {
 }
 
 .App.clear {
-  background-image: 
+  background-image:  linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0.52),
+    rgba(0, 195, 255, 0.73)
+  ),
     url("img/clear.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,7 +118,11 @@ html {
   }
 
   .App.rain {
-    background-image: 
+    background-image:  linear-gradient(
+      to right,
+      rgba(216, 14, 14, 0.432),
+      rgba(12, 183, 235, 0.73)
+    ),
       url("img/kids-rain.jpg");
     background-repeat: no-repeat;
     background-size: cover;
