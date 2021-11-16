@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/wather-app/static/css/main.05211665.chunk.css",
+    "main.js": "/wather-app/static/js/main.4cd19f07.chunk.js",
+    "main.js.map": "/wather-app/static/js/main.4cd19f07.chunk.js.map",
+    "runtime-main.js": "/wather-app/static/js/runtime-main.9b5ca675.js",
+    "runtime-main.js.map": "/wather-app/static/js/runtime-main.9b5ca675.js.map",
+    "static/js/2.02b4c271.chunk.js": "/wather-app/static/js/2.02b4c271.chunk.js",
+    "static/js/2.02b4c271.chunk.js.map": "/wather-app/static/js/2.02b4c271.chunk.js.map",
+    "static/js/3.a4db28c3.chunk.js": "/wather-app/static/js/3.a4db28c3.chunk.js",
+    "static/js/3.a4db28c3.chunk.js.map": "/wather-app/static/js/3.a4db28c3.chunk.js.map",
+    "index.html": "/wather-app/index.html",
+    "static/css/main.05211665.chunk.css.map": "/wather-app/static/css/main.05211665.chunk.css.map",
+    "static/js/2.02b4c271.chunk.js.LICENSE.txt": "/wather-app/static/js/2.02b4c271.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/wather-app/static/media/weather.0f934b88.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9b5ca675.js",
+    "static/js/2.02b4c271.chunk.js",
+    "static/css/main.05211665.chunk.css",
+    "static/js/main.4cd19f07.chunk.js"
+  ]
+}
