@@ -1,14 +1,11 @@
-
-import CityCard from "../component/CityCard "
-function Favorites(){
-   console.log(CityCard)
-   return(
+import CityCard from '../component/CityCard '
+function Favorites() {
+    console.log(CityCard)
+    return (
         <div className="favorites">
-
-           <CityCard />
+            <CityCard />
         </div>
-          
-   )
+    )
 }
 
 export default Favorites
